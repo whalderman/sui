@@ -1,0 +1,6 @@
+{
+	"name": "@wjh/throttle",
+	"exports": "./mod.ts",
+	"license": "MIT",
+	"version": "0.1.0",
+}

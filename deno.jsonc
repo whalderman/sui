@@ -1,0 +1,36 @@
+{
+	"name": "@wjh/sui",
+	"tasks": {
+		"dev": "deno run --watch mod.ts"
+	},
+	"imports": {
+		"@deno/dnt": "jsr:@deno/dnt@^0.42.1",
+		"@std/assert": "jsr:@std/assert@^1.0.13"
+	},
+	"test": {
+		"include": ["src/**/*.test.ts"]
+	},
+	"compilerOptions": {
+		"lib": [
+			"deno.window",
+			"esnext"
+		]
+	},
+	"fmt": {
+		"useTabs": true
+	},
+	"workspace": {
+		"members": [
+			"pkg/*",
+		]
+	},
+	"exports": {
+		".": "./mod.ts",
+		"./random": "./pkg/random/mod.ts",
+		"./rejax": "./pkg/rejax/mod.ts",
+		"./throttle": "./pkg/throttle/mod.ts",
+	},
+	"exclude": [
+		"*.test.ts"
+	]
+}

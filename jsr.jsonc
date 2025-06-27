@@ -1,0 +1,9 @@
+{
+	"$schema": "https://jsr.io/schema/config-file.v1.json",
+	"name": "@wjh/sui",
+	"exports": {
+		".": "./mod.ts"
+	},
+	"license": "MIT",
+	"version": "0.1.0"
+}
