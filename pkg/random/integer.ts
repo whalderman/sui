@@ -4,11 +4,11 @@
  * are equal, returns `min`. If `min` is greater than `max`, the values
  * are swapped.
  *
- * @param min - The lower bound of the range (inclusive).
- * @param max - The upper bound of the range (exclusive).
+ * @param min - The lower bound of the range (inclusive). Default `0`.
+ * @param max - The upper bound of the range (exclusive). Default `Number.MAX_SAFE_INTEGER`.
  * @returns A random integer between `min` (inclusive) and `max` (exclusive).
  */
-export function generate(min: number, max: number): number {
+export function generate(min = 0, max = Number.MAX_SAFE_INTEGER): number {
 	if ((max - min) > Number.MAX_SAFE_INTEGER) {
 		console.warn(`The range ${min}..${max} is greater than the maximum safe integer (${Number.MAX_SAFE_INTEGER}).`);
 	}
