@@ -1,4 +1,4 @@
-import * as random from "@wjh/random";
+import { generateInteger } from "../random/integer.ts";
 
 /**
  * Creates an async generator that yields throttle intervals and allows dynamic adjustment of throttling strategy.
@@ -79,7 +79,7 @@ export async function* create(
 		switch (next?.strategy) {
 			case "backoff": {
 				const backoffThrottleMillis = throttleMillis * backoffMultiplier +
-					random.integer.generate(1, 1000);
+					generateInteger(1, 1000);
 				throttleMillis = Math.min(
 					maxThrottleMillis,
 					backoffThrottleMillis,
@@ -89,7 +89,7 @@ export async function* create(
 
 			case "speedup": {
 				const speedupThrottleMillis = throttleMillis / backoffMultiplier +
-					random.integer.generate(1, 1000);
+					generateInteger(1, 1000);
 				throttleMillis = Math.max(
 					defaultThrottleMillis,
 					speedupThrottleMillis,

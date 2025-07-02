@@ -4,5 +4,5 @@
 	"editor.formatOnSaveMode": "modificationsIfAvailable",
 	"[typescript]": {
 		"editor.defaultFormatter": "denoland.vscode-deno"
-	},
+	}
 }

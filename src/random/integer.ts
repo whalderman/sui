@@ -10,7 +10,9 @@
  */
 export function generate(min = 0, max = Number.MAX_SAFE_INTEGER): number {
 	if ((max - min) > Number.MAX_SAFE_INTEGER) {
-		console.warn(`The range ${min}..${max} is greater than the maximum safe integer (${Number.MAX_SAFE_INTEGER}).`);
+		console.warn(
+			`The range ${min}..${max} is greater than the maximum safe integer (${Number.MAX_SAFE_INTEGER}).`,
+		);
 	}
 	if (min === max) {
 		return min;

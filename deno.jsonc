@@ -21,17 +21,12 @@
 	"fmt": {
 		"useTabs": true
 	},
-	"workspace": {
-		"members": [
-			"pkg/*",
-		]
-	},
 	"exports": {
 		".": "./mod.ts",
-		"./dated": "./pkg/dated/mod.ts",
-		"./random": "./pkg/random/mod.ts",
-		"./regex": "./pkg/regex/mod.ts",
-		"./throttle": "./pkg/throttle/mod.ts",
+		"./dated": "./src/dated/mod.ts",
+		"./random": "./src/random/mod.ts",
+		"./regex": "./src/regex/mod.ts",
+		"./throttle": "./src/throttle/mod.ts"
 	},
 	"exclude": [
 		"*.test.ts"
