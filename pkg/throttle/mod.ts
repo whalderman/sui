@@ -1,4 +1,4 @@
-import * as random from "../random/mod.ts";
+import * as random from "@wjh/random";
 
 /**
  * Creates an async generator that yields throttle intervals and allows dynamic adjustment of throttling strategy.
