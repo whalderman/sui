@@ -79,7 +79,7 @@ export async function* create(
 		switch (next?.strategy) {
 			case "backoff": {
 				const backoffThrottleMillis = throttleMillis * backoffMultiplier +
-					random.intBetween(1, 1000);
+					random.integer.generate(1, 1000);
 				throttleMillis = Math.min(
 					maxThrottleMillis,
 					backoffThrottleMillis,
@@ -89,7 +89,7 @@ export async function* create(
 
 			case "speedup": {
 				const speedupThrottleMillis = throttleMillis / backoffMultiplier +
-					random.intBetween(1, 1000);
+					random.integer.generate(1, 1000);
 				throttleMillis = Math.max(
 					defaultThrottleMillis,
 					speedupThrottleMillis,
