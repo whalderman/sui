@@ -1,3 +1,10 @@
+/**
+ * @module regex/ja
+ * Provides regular expressions and patterns for Japanese characters.
+ * Commonly used in `HTMLInputElement` `pattern` attributes and for
+ * custom verfication of HTML `form` elements.
+ */
+
 const hanRange: string = String.raw`\u3400-\u4DBF\u4E00-\u9FFF`;
 /** @example /^[\u3400-\u4DBF\u4E00-\u9FFF]+$/u */
 const hanOnly: RegExp = new RegExp(`^[${hanRange}]+$`, "u");

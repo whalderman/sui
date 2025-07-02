@@ -1,4 +1,9 @@
 /**
+ * @module random/integer
+ * Provides utilities for generating random and pseudo-random integers.
+ */
+
+/**
  * Returns a pseudo-random integer between the specified `min` and `max`
  * values, inclusive of `min` and exclusive of `max`. If `min` and `max`
  * are equal, returns `min`. If `min` is greater than `max`, the values

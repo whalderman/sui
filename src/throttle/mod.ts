@@ -1,3 +1,8 @@
+/**
+ * @module throttle
+ * Provides utilities for throttling asynchronous operations.
+ */
+
 import { generateInteger } from "../random/integer.ts";
 
 /**

@@ -1,4 +1,10 @@
 /**
+ * @module random/bytes
+ * Provides utilities for generating crytographically secure and random
+ * byte arrays.
+ */
+
+/**
  * Generates a new `RandomByteArray` instance seeded with
  * cryptographically secure random bytes.
  *

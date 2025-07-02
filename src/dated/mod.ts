@@ -1,4 +1,10 @@
 /**
+ * @module dated
+ * Provides enums for easy `Date` `getDay`, `getUTCDay`, `getMonth`, and
+ * `getUTCMonth` validation.
+ */
+
+/**
  * An enum matching Weekday values as returned by methods in the `Date`
  * object.
  *
