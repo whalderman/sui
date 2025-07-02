@@ -1,5 +1,5 @@
 {
-	"name": "@wjh/rejax",
+	"name": "@wjh/regex",
 	"exports": "./mod.ts",
 	"license": "MIT",
 	"version": "0.1.0",

@@ -27,7 +27,7 @@
 	"exports": {
 		".": "./mod.ts",
 		"./random": "./pkg/random/mod.ts",
-		"./rejax": "./pkg/rejax/mod.ts",
+		"./regex": "./pkg/regex/mod.ts",
 		"./throttle": "./pkg/throttle/mod.ts",
 	},
 	"exclude": [

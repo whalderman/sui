@@ -1,37 +1,37 @@
-const hanRange = String.raw`\u4E00-\u9FFF\u3400-\u4DBF`;
-/** @example /^[\u4E00-\u9FFF\u3400-\u4DBF]+$/u */
+const hanRange = String.raw`\u3400-\u4DBF\u4E00-\u9FFF`;
+/** @example /^[\u3400-\u4DBF\u4E00-\u9FFF]+$/u */
 const hanOnly = new RegExp(`^[${hanRange}]+$`, "u");
-/** @example /[\u4E00-\u9FFF\u3400-\u4DBF]/u */
+/** @example /[\u3400-\u4DBF\u4E00-\u9FFF]/u */
 const han = new RegExp(`[${hanRange}]`, "u");
 
 const hiraRange = String.raw`\u3040-\u309F`;
 /** @example /^[\u3040-\u309F]+$/u */
 const hiraOnly = new RegExp(`^[${hiraRange}]+$`, "u");
-/** @example /[\u4E00-\u9FFF\u3400-\u4DBF]/u */
+/** @example /[\u3040-\u309F]/u */
 const hira = new RegExp(`[${hiraRange}]`, "u");
 
 const kanaFullWidthRange = String.raw`\u30A0-\u30FF`;
 /** @example /^[\u30A0-\u30FF]+$/u */
 const kanaFullWidthOnly = new RegExp(`^[${kanaFullWidthRange}]+$`, "u");
-/** @example /[\u4E00-\u9FFF\u3400-\u4DBF]/u */
+/** @example /[\u30A0-\u30FF]/u */
 const kanaFullWidth = new RegExp(`[${kanaFullWidthRange}]`, "u");
 
 const kanaHalfWidthRange = String.raw`\uFF65-\uFF9F`;
 /** @example /^[\uFF65-\uFF9F]+$/u */
 const kanaHalfWidthOnly = new RegExp(`^[${kanaHalfWidthRange}]+$`, "u");
-/** @example /[\u4E00-\u9FFF\u3400-\u4DBF]/u */
+/** @example /[\uFF65-\uFF9F]/u */
 const kanaHalfWidth = new RegExp(`[${kanaHalfWidthRange}]`, "u");
 
 const kanaRange = kanaFullWidthRange + kanaHalfWidthRange;
 /** @example /^[\u30A0-\u30FF\uFF65-\uFF9F]+$/u */
 const kanaOnly = new RegExp(`^[${kanaRange}]+$`, "u");
-/** @example /[\u4E00-\u9FFF\u3400-\u4DBF]/u */
+/** @example /[\u30A0-\u30FF\uFF65-\uFF9F]/u */
 const kana = new RegExp(`[${kanaRange}]`, "u");
 
 const romajiHalfWidthRange = "A-Za-z";
 /** @example /^[A-Za-z]+$/ */
 const romajiHalfWidthOnly = new RegExp(`^[${romajiHalfWidthRange}]+$`);
-/** @example /[\u4E00-\u9FFF\u3400-\u4DBF]/u */
+/** @example /[A-Za-z]/u */
 const romajiHalfWidth = new RegExp(`[${romajiHalfWidthRange}]`, "u");
 
 const romajiFullWidthRange = String.raw`\uFF21-\uFF3A\uFF41-\uFF5A`;
@@ -40,92 +40,124 @@ const romajiFullWidthOnly = new RegExp(
 	`^[${romajiFullWidthRange}]+$`,
 	"u",
 );
-/** @example /[\u4E00-\u9FFF\u3400-\u4DBF]/u */
+/** @example /[\uFF21-\uFF3A\uFF41-\uFF5A]/u */
 const romajiFullWidth = new RegExp(`[${romajiFullWidthRange}]`, "u");
 
 const romajiRange = romajiHalfWidthRange + romajiFullWidthRange;
 /** @example /^[A-Za-z\uFF21-\uFF3A\uFF41-\uFF5A]+$/u */
 const romajiOnly = new RegExp(`^[${romajiRange}]+$`, "u");
-/** @example /[\u4E00-\u9FFF\u3400-\u4DBF]/u */
+/** @example /[A-Za-z\uFF21-\uFF3A\uFF41-\uFF5A]/u */
 const romaji = new RegExp(`[${romajiRange}]`, "u");
 
 const digitHalfWidthRange = String.raw`\d`;
 /** @example /^\d+$/ */
-const digitHalfWidthOnly = new RegExp(
-	`^${digitHalfWidthRange}+$`,
-);
+const digitHalfWidthOnly = /^\d+$/;
 /** @example /\d/ */
-const digitHalfWidth = new RegExp(`[${digitHalfWidthRange}]`, "u");
+const digitHalfWidth = /\d/;
 
-const digitFullWidthRange = String.raw`\uFF10-\uFF19`;
-/** @example /^[\uFF10-\uFF19]+$/u */
-const digitFullWidthOnly = new RegExp(
-	`^[${digitFullWidthRange}]+$`,
-	"u",
-);
-/** @example /[\uFF10-\uFF19]/u */
-const digitFullWidth = new RegExp(`[${digitFullWidthRange}]`, "u");
+const digitFullWidthRange = String.raw`０-９`;
+/** @example /^[０-９]+$/u */
+const digitFullWidthOnly = /^[０-９]+$/u;
+/** @example /[０-９]/u */
+const digitFullWidth = /[０-９]/u;
 
 const digitRange = digitHalfWidthRange + digitFullWidthRange;
-/** @example /^[\d\uFF10-\uFF19]+$/u */
-const digitOnly = new RegExp(`^[${digitRange}]+$`, "u");
-/** @example /[\d\uFF10-\uFF19]/u */
-const digit = new RegExp(`[${digitRange}]`, "u");
+/** @example /^[\d０-９]+$/u */
+const digitOnly = /^[\d０-９]+$/u;
+/** @example /[\d０-９]/u */
+const digit = /[\d０-９]/u;
 
 const whitespaceHalfWidthRange = " ";
 /** @example /^ +$/ */
 /** @example / / */
-const whitespaceHalfWidth = new RegExp(`${whitespaceHalfWidthRange}`, "u");
+const whitespaceHalfWidth = / /;
 
 const whitespaceFullWidthRange = String.raw`\u3000`;
 /** @example /\u3000/u */
-const whitespaceFullWidth = new RegExp(`${whitespaceFullWidthRange}`, "u");
+const whitespaceFullWidth = /\u3000/u;
 
 const whitespaceRange = String
-	.raw`\u0009\u000A\u000B\u000C\u000D\u0020\u0085\u00A0\u1680\u180E\u2000-\u200A\u2028-\u202F\u205F\u2060\u3000\uFEFF`;
-/** @example /[\u0009\u000A\u000B\u000C\u000D\u0020\u0085\u00A0\u1680\u180E\u2000-\u200A\u2028-\u202F\u205F\u2060\u3000\uFEFF]/u */
-const whitespace = new RegExp(`[${whitespaceRange}]`, "u");
+	.raw`\t\n\v\f\r \u0085\u00A0\u1680\u180E\u2000-\u200A\u2028-\u202F\u205F\u2060\u3000\uFEFF`;
+/** @example /[\t\n\v\f\r \u0085\u00A0\u1680\u180E\u2000-\u200A\u2028-\u202F\u205F\u2060\u3000\uFEFF]/u */
+const whitespace =
+	/[\t\n\v\f\r \u0085\u00A0\u1680\u180E\u2000-\u200A\u2028-\u202F\u205F\u2060\u3000\uFEFF]/u;
 
-export { predefined as regexPredefined };
-
+/**
+ * An object containing predicate functions to test if a string consists
+ * only of specific character sets.
+ */
 const only = {
+	/** Han (Kanji) characters. Equivalent to `fullWidth.han`. */
 	han: hanOnly,
+	/** Hiragana characters. Equivalent to `fullWidth.hira`. */
 	hira: hiraOnly,
+	/** Kana (Hiragana or Katakana) characters. */
 	kana: kanaOnly,
+	/** Romaji (Latin alphabet) characters. */
 	romaji: romajiOnly,
+	/** digit characters. */
 	digit: digitOnly,
+	/** An object containing predicates for full-width character sets: */
 	fullWidth: {
-		/** Equivalent to `only.han` */
+		/** full-width Han characters. Equivalent to `only.han`. */
 		han: hanOnly,
-		/** Equivalent to `only.hira` */
+		/** full-width Hiragana characters. Equivalent to `only.hira`. */
 		hira: hiraOnly,
+		/** full-width Kana characters. */
 		kana: kanaFullWidthOnly,
+		/** full-width Romaji characters. */
 		romaji: romajiFullWidthOnly,
+		/** full-width digit characters. */
 		digit: digitFullWidthOnly,
 	},
+	/** An object containing predicates for half-width character sets: */
 	halfWidth: {
+		/** half-width Kana characters. */
 		kana: kanaHalfWidthOnly,
+		/** half-width Romaji characters. */
 		romaji: romajiHalfWidthOnly,
+		/** half-width digit characters. */
 		digit: digitHalfWidthOnly,
 	},
 };
 
+/**
+ * An object mapping character sets to their corresponding half-width
+ * regular expressions.
+ */
 const halfWidth = {
+	/** Half-width kana characters. */
 	kana: kanaHalfWidth,
+	/** Half-width romaji (Latin alphabet) characters. */
 	romaji: romajiHalfWidth,
+	/** Half-width digit characters. */
 	digit: digitHalfWidth,
+	/** Half-width whitespace characters. */
 	whitespace: whitespaceHalfWidth,
 };
 
+/**
+ * An object containing patterns for handling full-width character sets.
+ */
 const fullWidth = {
+	/** Full-width Han (Chinese) characters. */
 	han,
+	/** Full-width Hiragana characters. */
 	hira,
+	/** Full-width Katakana characters. */
 	kana: kanaFullWidth,
+	/** Full-width Romaji (Latin) characters. */
 	romaji: romajiFullWidth,
+	/** Full-width digits. */
 	digit: digitFullWidth,
+	/** Full-width whitespace characters. */
 	whitespace: whitespaceFullWidth,
 };
 
+/**
+ * An object containing predefined character set constants for text processing.
+ * Each property represents a specific character set or category, such as:
+ */
 export const predefined = {
 	only,
 	halfWidth,
@@ -137,6 +169,7 @@ export const predefined = {
 	digit,
 	whitespace,
 };
+export { predefined as regexPredefined };
 
 const regExpCharRangeByName = {
 	han: hanRange,
@@ -180,7 +213,7 @@ function buildRegex(
  * @returns A `RegExp` object that matches any character from the
  * specified classes or custom patterns.
  */
-export function build(
+export function create(
 	...classNamesOrCustomRegExpStrings: PredefinedRegExpName[]
 ): RegExp {
 	const reStr = `[${buildRegex(...classNamesOrCustomRegExpStrings)}]`;
@@ -206,11 +239,14 @@ export function build(
  * re.test('エィビィシィ'); // false
  * ```
  */
-export function buildStrict(
+export function createStrict(
 	...namesOrRegExpStrings: PredefinedRegExpName[]
 ): RegExp {
 	const reStr = `^[${buildRegex(...namesOrRegExpStrings)}]+$`;
 	return new RegExp(reStr, "u");
 }
 
-export { build as buildRegExpToMatch, buildStrict as buildRegExpToMatchStrict };
+export {
+	create as createRegExpToMatch,
+	createStrict as createStrictRegExpToMatch,
+};
