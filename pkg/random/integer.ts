@@ -9,6 +9,9 @@
  * @returns A random integer between `min` (inclusive) and `max` (exclusive).
  */
 export function generate(min: number, max: number): number {
+	if ((max - min) > Number.MAX_SAFE_INTEGER) {
+		console.warn(`The range ${min}..${max} is greater than the maximum safe integer (${Number.MAX_SAFE_INTEGER}).`);
+	}
 	if (min === max) {
 		return min;
 	}
