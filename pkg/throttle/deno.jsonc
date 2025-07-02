@@ -1,6 +1,11 @@
 {
 	"name": "@wjh/throttle",
-	"exports": "./mod.ts",
-	"license": "MIT",
 	"version": "0.1.0",
+	"license": "MIT",
+	"exports": {
+		".": "./mod.ts"
+	},
+	"exclude": [
+		"*.test.ts"
+	]
 }

@@ -15,13 +15,6 @@ export enum Weekday {
 	Saturday,
 }
 
-declare global {
-	interface Date {
-		getDay(): Weekday;
-		getUTCDay(): Weekday;
-	}
-}
-
 /**
  * An enum matching Month values as returned by methods in the `Date`
  * object.
@@ -42,20 +35,4 @@ export enum Month {
 	October,
 	November,
 	December,
-}
-
-declare global {
-	interface Date {
-		getMonth(): Month;
-		getUTCMonth(): Month;
-	}
-}
-
-export type ISO8601UTCString =
-	`${number}-${number}-${number}T${number}:${number}:${number}.${number}Z`;
-
-declare global {
-	interface Date {
-		getISOString(): ISO8601UTCString;
-	}
 }

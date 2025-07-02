@@ -1,85 +1,85 @@
-const hanRange = String.raw`\u3400-\u4DBF\u4E00-\u9FFF`;
+const hanRange: string = String.raw`\u3400-\u4DBF\u4E00-\u9FFF`;
 /** @example /^[\u3400-\u4DBF\u4E00-\u9FFF]+$/u */
-const hanOnly = new RegExp(`^[${hanRange}]+$`, "u");
+const hanOnly: RegExp = new RegExp(`^[${hanRange}]+$`, "u");
 /** @example /[\u3400-\u4DBF\u4E00-\u9FFF]/u */
-const han = new RegExp(`[${hanRange}]`, "u");
+const han: RegExp = new RegExp(`[${hanRange}]`, "u");
 
-const hiraRange = String.raw`\u3040-\u309F`;
+const hiraRange: string = String.raw`\u3040-\u309F`;
 /** @example /^[\u3040-\u309F]+$/u */
-const hiraOnly = new RegExp(`^[${hiraRange}]+$`, "u");
+const hiraOnly: RegExp = new RegExp(`^[${hiraRange}]+$`, "u");
 /** @example /[\u3040-\u309F]/u */
-const hira = new RegExp(`[${hiraRange}]`, "u");
+const hira: RegExp = new RegExp(`[${hiraRange}]`, "u");
 
-const kanaFullWidthRange = String.raw`\u30A0-\u30FF`;
+const kanaFullWidthRange: string = String.raw`\u30A0-\u30FF`;
 /** @example /^[\u30A0-\u30FF]+$/u */
-const kanaFullWidthOnly = new RegExp(`^[${kanaFullWidthRange}]+$`, "u");
+const kanaFullWidthOnly: RegExp = new RegExp(`^[${kanaFullWidthRange}]+$`, "u");
 /** @example /[\u30A0-\u30FF]/u */
-const kanaFullWidth = new RegExp(`[${kanaFullWidthRange}]`, "u");
+const kanaFullWidth: RegExp = new RegExp(`[${kanaFullWidthRange}]`, "u");
 
-const kanaHalfWidthRange = String.raw`\uFF65-\uFF9F`;
+const kanaHalfWidthRange: string = String.raw`\uFF65-\uFF9F`;
 /** @example /^[\uFF65-\uFF9F]+$/u */
-const kanaHalfWidthOnly = new RegExp(`^[${kanaHalfWidthRange}]+$`, "u");
+const kanaHalfWidthOnly: RegExp = new RegExp(`^[${kanaHalfWidthRange}]+$`, "u");
 /** @example /[\uFF65-\uFF9F]/u */
-const kanaHalfWidth = new RegExp(`[${kanaHalfWidthRange}]`, "u");
+const kanaHalfWidth: RegExp = new RegExp(`[${kanaHalfWidthRange}]`, "u");
 
 const kanaRange = kanaFullWidthRange + kanaHalfWidthRange;
 /** @example /^[\u30A0-\u30FF\uFF65-\uFF9F]+$/u */
-const kanaOnly = new RegExp(`^[${kanaRange}]+$`, "u");
+const kanaOnly: RegExp = new RegExp(`^[${kanaRange}]+$`, "u");
 /** @example /[\u30A0-\u30FF\uFF65-\uFF9F]/u */
-const kana = new RegExp(`[${kanaRange}]`, "u");
+const kana: RegExp = new RegExp(`[${kanaRange}]`, "u");
 
 const romajiHalfWidthRange = "A-Za-z";
 /** @example /^[A-Za-z]+$/ */
-const romajiHalfWidthOnly = new RegExp(`^[${romajiHalfWidthRange}]+$`);
+const romajiHalfWidthOnly: RegExp = new RegExp(`^[${romajiHalfWidthRange}]+$`);
 /** @example /[A-Za-z]/u */
-const romajiHalfWidth = new RegExp(`[${romajiHalfWidthRange}]`, "u");
+const romajiHalfWidth: RegExp = new RegExp(`[${romajiHalfWidthRange}]`, "u");
 
-const romajiFullWidthRange = String.raw`\uFF21-\uFF3A\uFF41-\uFF5A`;
+const romajiFullWidthRange: string = String.raw`\uFF21-\uFF3A\uFF41-\uFF5A`;
 /** @example /^[\uFF21-\uFF3A\uFF41-\uFF5A]+$/u */
-const romajiFullWidthOnly = new RegExp(
+const romajiFullWidthOnly: RegExp = new RegExp(
 	`^[${romajiFullWidthRange}]+$`,
 	"u",
 );
 /** @example /[\uFF21-\uFF3A\uFF41-\uFF5A]/u */
-const romajiFullWidth = new RegExp(`[${romajiFullWidthRange}]`, "u");
+const romajiFullWidth: RegExp = new RegExp(`[${romajiFullWidthRange}]`, "u");
 
 const romajiRange = romajiHalfWidthRange + romajiFullWidthRange;
 /** @example /^[A-Za-z\uFF21-\uFF3A\uFF41-\uFF5A]+$/u */
-const romajiOnly = new RegExp(`^[${romajiRange}]+$`, "u");
+const romajiOnly: RegExp = new RegExp(`^[${romajiRange}]+$`, "u");
 /** @example /[A-Za-z\uFF21-\uFF3A\uFF41-\uFF5A]/u */
-const romaji = new RegExp(`[${romajiRange}]`, "u");
+const romaji: RegExp = new RegExp(`[${romajiRange}]`, "u");
 
-const digitHalfWidthRange = String.raw`\d`;
+const digitHalfWidthRange: string = String.raw`\d`;
 /** @example /^\d+$/ */
-const digitHalfWidthOnly = /^\d+$/;
+const digitHalfWidthOnly: RegExp = /^\d+$/;
 /** @example /\d/ */
-const digitHalfWidth = /\d/;
+const digitHalfWidth: RegExp = /\d/;
 
-const digitFullWidthRange = String.raw`０-９`;
+const digitFullWidthRange: string = String.raw`０-９`;
 /** @example /^[０-９]+$/u */
-const digitFullWidthOnly = /^[０-９]+$/u;
+const digitFullWidthOnly: RegExp = /^[０-９]+$/u;
 /** @example /[０-９]/u */
-const digitFullWidth = /[０-９]/u;
+const digitFullWidth: RegExp = /[０-９]/u;
 
 const digitRange = digitHalfWidthRange + digitFullWidthRange;
 /** @example /^[\d０-９]+$/u */
-const digitOnly = /^[\d０-９]+$/u;
+const digitOnly: RegExp = /^[\d０-９]+$/u;
 /** @example /[\d０-９]/u */
-const digit = /[\d０-９]/u;
+const digit: RegExp = /[\d０-９]/u;
 
 const whitespaceHalfWidthRange = " ";
 /** @example /^ +$/ */
 /** @example / / */
-const whitespaceHalfWidth = / /;
+const whitespaceHalfWidth: RegExp = / /;
 
-const whitespaceFullWidthRange = String.raw`\u3000`;
+const whitespaceFullWidthRange: string = String.raw`\u3000`;
 /** @example /\u3000/u */
-const whitespaceFullWidth = /\u3000/u;
+const whitespaceFullWidth: RegExp = /\u3000/u;
 
-const whitespaceRange = String
+const whitespaceRange: string = String
 	.raw`\t\n\v\f\r \u0085\u00A0\u1680\u180E\u2000-\u200A\u2028-\u202F\u205F\u2060\u3000\uFEFF`;
 /** @example /[\t\n\v\f\r \u0085\u00A0\u1680\u180E\u2000-\u200A\u2028-\u202F\u205F\u2060\u3000\uFEFF]/u */
-const whitespace =
+const whitespace: RegExp =
 	/[\t\n\v\f\r \u0085\u00A0\u1680\u180E\u2000-\u200A\u2028-\u202F\u205F\u2060\u3000\uFEFF]/u;
 
 /**
@@ -187,16 +187,23 @@ const regExpCharRangeByName = {
 	whitespaceFullWidth: whitespaceFullWidthRange,
 	whitespace: whitespaceRange,
 };
-type PredefinedRegExpName = keyof typeof regExpCharRangeByName | (string & {});
+type PredefinedRangeName = keyof typeof regExpCharRangeByName | (string & {});
+
+function isPredefinedRangeName(
+	s: string,
+): s is keyof typeof regExpCharRangeByName {
+	return s in regExpCharRangeByName;
+}
 
 function buildRegex(
-	...classNamesOrCustomRegExpStrings: PredefinedRegExpName[]
+	...classNamesOrCustomRegExpStrings: PredefinedRangeName[]
 ): string {
 	let re = "";
 	for (const rangeNameOrRegExpString of classNamesOrCustomRegExpStrings) {
-		if (rangeNameOrRegExpString in regExpCharRangeByName) {
-			// @ts-expect-error TypeScript can't handle this
-			re += regExpCharRangeByName[rangeNameOrRegExpString];
+		if (isPredefinedRangeName(rangeNameOrRegExpString)) {
+			re += regExpCharRangeByName[
+				rangeNameOrRegExpString
+			];
 		} else {
 			re += rangeNameOrRegExpString;
 		}
@@ -214,7 +221,7 @@ function buildRegex(
  * specified classes or custom patterns.
  */
 export function create(
-	...classNamesOrCustomRegExpStrings: PredefinedRegExpName[]
+	...classNamesOrCustomRegExpStrings: PredefinedRangeName[]
 ): RegExp {
 	const reStr = `[${buildRegex(...classNamesOrCustomRegExpStrings)}]`;
 	return new RegExp(reStr, "u");
@@ -240,7 +247,7 @@ export function create(
  * ```
  */
 export function createStrict(
-	...namesOrRegExpStrings: PredefinedRegExpName[]
+	...namesOrRegExpStrings: PredefinedRangeName[]
 ): RegExp {
 	const reStr = `^[${buildRegex(...namesOrRegExpStrings)}]+$`;
 	return new RegExp(reStr, "u");
