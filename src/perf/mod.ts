@@ -2,7 +2,7 @@ export class Timer {
 	/**
 	 * Creates and starts a new Timer.
 	 */
-	static start(label: string) {
+	static start(label: string): Timer {
 		return new Timer(label);
 	}
 
@@ -13,7 +13,7 @@ export class Timer {
 	/**
 	 * Logs data to the console, prefixed with with current timer value.
 	 */
-	log(...data: unknown[]) {
+	log(...data: unknown[]): this {
 		console.timeLog(this.label, data);
 		return this;
 	}
@@ -21,7 +21,7 @@ export class Timer {
 	/**
 	 * Stops the Timer.
 	 */
-	end() {
+	end(): this {
 		console.timeEnd(this.label);
 		return this;
 	}
@@ -42,6 +42,6 @@ export class Timer {
  * Timer.start("half-life")
  * new Timer("half-life")
  */
-export function track(label: string) {
+export function track(label: string): Timer {
 	return new Timer(label);
 }
