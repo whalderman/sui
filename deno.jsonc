@@ -1,6 +1,6 @@
 {
 	"name": "@wjh/sui",
-	"version": "0.3.2",
+	"version": "0.3.3",
 	"license": "MIT",
 	"tasks": {
 		"dev": "deno run --watch mod.ts"
@@ -29,6 +29,9 @@
 		"./regex": "./src/regex/mod.ts",
 		"./throttle": "./src/throttle/mod.ts"
 	},
+	"workspace": [
+		"src/*"
+	],
 	"exclude": [
 		"*.test.ts"
 	]
