@@ -1,6 +1,6 @@
 {
 	"name": "@wjh/sui",
-	"version": "0.3.1",
+	"version": "0.3.2",
 	"license": "MIT",
 	"tasks": {
 		"dev": "deno run --watch mod.ts"
