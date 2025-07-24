@@ -1,8 +1,7 @@
 {
-	"editor.defaultFormatter": "denoland.vscode-deno",
-	"editor.formatOnSave": true,
-	"editor.formatOnSaveMode": "modificationsIfAvailable",
 	"[typescript]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnSaveMode": "file",
 		"editor.defaultFormatter": "denoland.vscode-deno"
 	}
 }
