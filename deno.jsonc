@@ -1,26 +1,10 @@
 {
+	"workspace": [
+		"./src/*"
+	],
 	"name": "@wjh/sui",
-	"version": "0.4.0",
+	"version": "0.4.1",
 	"license": "MIT",
-	"tasks": {
-		"dev": "deno run --watch mod.ts"
-	},
-	"imports": {
-		"@deno/dnt": "jsr:@deno/dnt@^0.42.3",
-		"@std/assert": "jsr:@std/assert@^1.0.13"
-	},
-	"test": {
-		"include": ["src/**/*.test.ts"]
-	},
-	"compilerOptions": {
-		"lib": [
-			"deno.window",
-			"esnext"
-		]
-	},
-	"fmt": {
-		"useTabs": true
-	},
 	"exports": {
 		".": "./mod.ts",
 		"./calc": "./src/calc/mod.ts",
@@ -30,7 +14,33 @@
 		"./regex": "./src/regex/mod.ts",
 		"./throttle": "./src/throttle/mod.ts"
 	},
-	"exclude": [
-		"*.test.ts"
-	]
+	"tasks": {
+		"dev": "deno run --watch mod.ts"
+	},
+	"test": {
+		"include": ["**/*.test.ts"]
+	},
+	"publish": {
+		"include": [
+			"src/**",
+			"deno.jsonc",
+			"readme.md",
+			"license"
+		],
+		"exclude": ["**/*.test.ts"]
+	},
+	"imports": {
+		"@deno/dnt": "jsr:@deno/dnt@^0.42.3",
+		"@std/assert": "jsr:@std/assert@^1.0.13"
+	},
+	"compilerOptions": {
+		"lib": [
+			"esnext",
+			"dom",
+			"deno.ns"
+		]
+	},
+	"fmt": {
+		"useTabs": true
+	}
 }
