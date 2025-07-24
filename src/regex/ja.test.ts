@@ -1,5 +1,5 @@
 import { assertMatch, assertNotMatch } from "@std/assert";
-import * as regex from "./mod.ts";
+import * as regex from "./ja.ts";
 
 Deno.test("predefined only.han RegExp matches correctly", () => {
 	assertMatch("天元突破", regex.predefined.only.han);
@@ -141,13 +141,13 @@ Deno.test("predefined digit RegExp matches correctly", () => {
 });
 
 Deno.test("regular expressions are constructed correctly", () => {
-	const hanStrictRe = regex.buildStrict("han");
+	const hanStrictRe = regex.createStrict("han");
 	assertMatch("天元突破", hanStrictRe);
 	assertNotMatch("天元突破グレンラガン", hanStrictRe);
-	const hanKanaStrictRe = regex.buildStrict("han", "kana");
+	const hanKanaStrictRe = regex.createStrict("han", "kana");
 	assertMatch("天元突破グレンラガン", hanKanaStrictRe);
 	assertNotMatch("お前のドリルで天を衝け", hanKanaStrictRe);
-	const hanHiraKanaStrictRe = regex.buildStrict(
+	const hanHiraKanaStrictRe = regex.createStrict(
 		"han",
 		"hira",
 		"kana",
@@ -155,7 +155,7 @@ Deno.test("regular expressions are constructed correctly", () => {
 	assertMatch("お前のドリルで天を衝け", hanHiraKanaStrictRe);
 	assertNotMatch("お前のドリルでten wo tsuke", hanHiraKanaStrictRe);
 	const hanHiraKanaRomajiWhitespaceHalfWidthStrictRe = regex
-		.buildStrict(
+		.createStrict(
 			"han",
 			"hira",
 			"kana",
@@ -170,7 +170,7 @@ Deno.test("regular expressions are constructed correctly", () => {
 		"お前のドリルでten wo tsuke!",
 		hanHiraKanaRomajiWhitespaceHalfWidthStrictRe,
 	);
-	const hanHiraKanaRomajiRe = regex.build(
+	const hanHiraKanaRomajiRe = regex.create(
 		"han",
 		"hira",
 		"kana",

@@ -13,7 +13,7 @@
  * @param max - The upper bound of the range (exclusive). Default `Number.MAX_SAFE_INTEGER`.
  * @returns A random integer between `min` (inclusive) and `max` (exclusive).
  */
-export function generate(min = 0, max = Number.MAX_SAFE_INTEGER): number {
+export function intBetween(min = 0, max = Number.MAX_SAFE_INTEGER): number {
 	if ((max - min) > Number.MAX_SAFE_INTEGER) {
 		console.warn(
 			`The range ${min}..${max} is greater than the maximum safe integer (${Number.MAX_SAFE_INTEGER}).`,
@@ -31,4 +31,32 @@ export function generate(min = 0, max = Number.MAX_SAFE_INTEGER): number {
 	return Math.trunc(randomNumWithinRange);
 }
 
-export { generate as generateInt, generate as generateInteger };
+/**
+ * @returns A pseudo-random unsigned 8-bit integer.
+ */
+export function randomU8() {
+	return Math.random() * 256 | 0;
+}
+
+/**
+ * @returns A pseudo-random unsigned 16-bit integer.
+ */
+export function randomU16() {
+	return Math.random() * 65536 | 0;
+}
+
+/**
+ * @returns A pseudo-random unsigned 32-bit integer.
+ */
+export function randomU32() {
+	return Math.random() * 4294967296 | 0;
+}
+
+/**
+ * @remarks Generating a pseudo-random integer with an exponent `> 53` will result in lost accuracy. An exponent `>= 1024` will always return Infinity.
+ *
+ * @returns A random unsigned `n`-bit integer, or `Infinity`.
+ */
+export function randomUInt(n: number) {
+	return Math.trunc(Math.random() * 2 ** n);
+}
