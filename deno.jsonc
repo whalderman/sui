@@ -1,6 +1,6 @@
 {
 	"name": "@wjh/sui",
-	"version": "0.3.5",
+	"version": "0.4.0",
 	"license": "MIT",
 	"tasks": {
 		"dev": "deno run --watch mod.ts"
@@ -23,6 +23,7 @@
 	},
 	"exports": {
 		".": "./mod.ts",
+		"./calc": "./src/calc/mod.ts",
 		"./dated": "./src/dated/mod.ts",
 		"./perf": "./src/perf/mod.ts",
 		"./random": "./src/random/mod.ts",
