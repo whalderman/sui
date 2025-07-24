@@ -34,21 +34,21 @@ export function intBetween(min = 0, max = Number.MAX_SAFE_INTEGER): number {
 /**
  * @returns A pseudo-random unsigned 8-bit integer.
  */
-export function randomU8() {
+export function randomU8(): number {
 	return Math.random() * 256 | 0;
 }
 
 /**
  * @returns A pseudo-random unsigned 16-bit integer.
  */
-export function randomU16() {
+export function randomU16(): number {
 	return Math.random() * 65536 | 0;
 }
 
 /**
  * @returns A pseudo-random unsigned 32-bit integer.
  */
-export function randomU32() {
+export function randomU32(): number {
 	return Math.random() * 4294967296 | 0;
 }
 
@@ -57,6 +57,6 @@ export function randomU32() {
  *
  * @returns A random unsigned `n`-bit integer, or `Infinity`.
  */
-export function randomUInt(n: number) {
+export function randomUInt(n: number): number {
 	return Math.trunc(Math.random() * 2 ** n);
 }

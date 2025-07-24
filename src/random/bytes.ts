@@ -112,7 +112,7 @@ export class RandomU8Array extends Uint8Array {
 	 * @param length - The number of random bytes to generate.
 	 * @returns A `RandomU8Array` instance initialized with the generated random bytes.
 	 */
-	static ofLength(length: number) {
+	static ofLength(length: number): RandomU8Array {
 		return new RandomU8Array(length);
 	}
 
@@ -125,7 +125,7 @@ export class RandomU8Array extends Uint8Array {
 	 * @remarks **Mutates the underlying buffer.**
 	 * @returns the same Uint8Array with each element randomized to a new random u8 value.
 	 */
-	randomize() {
+	randomize(): this {
 		const { length } = this;
 		for (let i = 0; i < length; i++) {
 			this[i] = randomU8();
