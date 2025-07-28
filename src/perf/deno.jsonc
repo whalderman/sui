@@ -1,5 +1,5 @@
 {
-	"name": "@wjh/perf",
+	"name": "@wjh/sui-perf",
 	"version": "0.5.0",
 	"license": "MIT",
 	"exports": {

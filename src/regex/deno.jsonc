@@ -1,5 +1,5 @@
 {
-	"name": "@wjh/regex",
+	"name": "@wjh/sui-regex",
 	"version": "0.5.0",
 	"license": "MIT",
 	"exports": {

@@ -1,5 +1,5 @@
 {
-	"name": "@wjh/random",
+	"name": "@wjh/sui-random",
 	"version": "0.5.0",
 	"license": "MIT",
 	"exports": {

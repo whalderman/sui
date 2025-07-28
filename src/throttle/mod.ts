@@ -3,7 +3,7 @@
  * Provides utilities for throttling asynchronous operations.
  */
 
-import { intBetween } from "@wjh/random/integer";
+import { intBetween } from "@wjh/sui-random/integer";
 
 /**
  * Creates an async generator that yields throttle intervals and allows dynamic adjustment of throttling strategy.

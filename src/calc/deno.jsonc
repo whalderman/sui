@@ -1,5 +1,5 @@
 {
-	"name": "@wjh/calc",
+	"name": "@wjh/sui-calc",
 	"version": "0.5.0",
 	"license": "MIT",
 	"exports": {
