@@ -2,31 +2,20 @@
 	"workspace": [
 		"./src/*"
 	],
-	"name": "@wjh/sui",
-	"version": "0.4.1",
-	"license": "MIT",
-	"exports": {
-		".": "./mod.ts",
-		"./calc": "./src/calc/mod.ts",
-		"./dated": "./src/dated/mod.ts",
-		"./perf": "./src/perf/mod.ts",
-		"./random": "./src/random/mod.ts",
-		"./regex": "./src/regex/mod.ts",
-		"./throttle": "./src/throttle/mod.ts"
-	},
 	"tasks": {
-		"dev": "deno run --watch mod.ts"
+		"dev": "deno run --watch mod.ts",
+		"test": "deno test -A --parallel"
 	},
+	"include": [
+		"src/**",
+		"deno.jsonc",
+		"readme.md",
+		"license"
+	],
 	"test": {
 		"include": ["src/**/*.test.ts"]
 	},
 	"publish": {
-		"include": [
-			"src/**",
-			"deno.jsonc",
-			"readme.md",
-			"license"
-		],
 		"exclude": ["**/*.test.ts"]
 	},
 	"imports": {
