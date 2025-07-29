@@ -3,7 +3,7 @@
  * Provides utilities for throttling asynchronous operations.
  */
 
-import { intBetween } from "@wjh/sui-random/integer";
+import { between } from "@wjh/sui-random/integer";
 
 /**
  * Creates an async generator that yields throttle intervals and allows dynamic adjustment of throttling strategy.
@@ -84,7 +84,7 @@ export async function* create(
 		switch (next?.strategy) {
 			case "backoff": {
 				const backoffThrottleMillis = throttleMillis * backoffMultiplier +
-					intBetween(1, 1000);
+					between(1, 1000);
 				throttleMillis = Math.min(
 					maxThrottleMillis,
 					backoffThrottleMillis,
@@ -94,7 +94,7 @@ export async function* create(
 
 			case "speedup": {
 				const speedupThrottleMillis = throttleMillis / backoffMultiplier +
-					intBetween(1, 1000);
+					between(1, 1000);
 				throttleMillis = Math.max(
 					defaultThrottleMillis,
 					speedupThrottleMillis,

@@ -4,5 +4,5 @@
  * and byte arrays.
  */
 
-export * as bytes from "./bytes.ts";
+export * as bytes from "./uintArray.ts";
 export * as integer from "./integer.ts";
