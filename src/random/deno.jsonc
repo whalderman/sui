@@ -5,7 +5,7 @@
 	"exports": {
 		".": "./mod.ts",
 		"./integer": "./integer.ts",
-		"./bytes": "./bytes.ts"
+		"./uintArray": "./uintArray.ts"
 	},
 	"publish": {
 		"exclude": [
