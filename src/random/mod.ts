@@ -7,3 +7,9 @@
 export * as array from "./array.ts";
 export * as integer from "./integer.ts";
 export * as secure from "./secure/mod.ts";
+
+import * as integer from "./integer.ts";
+
+export function itemFrom<T>(array: ArrayLike<T> | Array<T>): T {
+	return array[integer.between(0, array.length)];
+}
