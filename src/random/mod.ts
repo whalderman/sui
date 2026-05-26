@@ -6,6 +6,7 @@
 
 export * from "./array.ts";
 export * as integer from "./integer.ts";
+export * as string from "./string.ts";
 export * as secure from "./secure/mod.ts";
 
 import { randomIntBetween } from "./integer.ts";
