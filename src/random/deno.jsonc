@@ -1,15 +1,13 @@
 {
 	"name": "@wjh/sui-random",
-	"version": "0.10.0",
+	"version": "0.10.1",
 	"license": "MIT",
 	"exports": {
 		".": "./mod.ts",
 		"./array": "./array.ts",
 		"./integer": "./integer.ts",
-		"./string": "./string.ts",
 		"./secure/mod": "./secure/mod.ts",
-		"./secure/array": "./secure/array.ts",
-		"./secure/string": "./secure/string.ts"
+		"./secure/array": "./secure/array.ts"
 	},
 	"publish": {
 		"exclude": [
