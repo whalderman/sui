@@ -7,14 +7,14 @@
 import { u16, u32, u8 } from "./integer.ts";
 
 /**
- * The `RandomU8Array` class provides utilities for representing and
+ * The `U8Array` class provides utilities for representing and
  * encoding random unsigned integer arrays in various string formats.
  *
  * @example
  * ```typescript
- * const r = RandomU8Array.ofLength(2);
+ * const r = U8Array.ofLength(2);
  * // or
- * // const r = new RandomU8Array(2);
+ * // const r = new U8Array(2);
  * console.log(r.toHex()); // "faf0"
  * r.randomize();
  * console.log(r.toHex()); // "beef"
@@ -22,16 +22,16 @@ import { u16, u32, u8 } from "./integer.ts";
  *
  * @remarks String output does **not** include prefix (e.g., `0b`, `0o`, `0x`).
  */
-export class RandomU8Array extends Uint8Array {
+export class U8Array extends Uint8Array {
 	/**
-	 * Generates a new `RandomU8Array` instance seeded with
+	 * Generates a new `U8Array` instance seeded with
 	 * `Math.random`-sourced bytes.
 	 *
 	 * @param length - The number of random bytes to generate.
-	 * @returns A `RandomU8Array` instance initialized with the generated random bytes.
+	 * @returns A `U8Array` instance initialized with the generated random bytes.
 	 */
-	static ofLength(length: number): RandomU8Array {
-		return new RandomU8Array(length);
+	static ofLength(length: number): U8Array {
+		return new U8Array(length);
 	}
 
 	constructor(length: number) {
@@ -40,12 +40,12 @@ export class RandomU8Array extends Uint8Array {
 	}
 
 	/**
-	 * @remarks **Mutates the underlying buffer.**
+	 * @remarks **Mutates** the underlying buffer.
 	 * @returns the same Uint8Array with each element randomized to a new random u8 value.
 	 */
 	randomize(): this {
-		const { length } = this;
-		for (let i = 0; i < length; i++) {
+		let i = this.length | 0;
+		while (i--) {
 			this[i] = u8();
 		}
 		return this;
@@ -56,8 +56,8 @@ export class RandomU8Array extends Uint8Array {
 	 * @remarks Does not include the `0b` prefix.
 	 */
 	toBinary(): string {
-		let b = "", i = 0;
-		for (; i < this.length; i++) {
+		let b = "", i = this.length | 0;
+		while (i--) {
 			b += this[i].toString(2);
 		}
 		return b;
@@ -68,8 +68,8 @@ export class RandomU8Array extends Uint8Array {
 	 * @remarks Does not include the `0o` prefix.
 	 */
 	toOctal(): string {
-		let o = "", i = 0;
-		for (; i < this.length; i++) {
+		let o = "", i = this.length | 0;
+		while (i--) {
 			o += this[i].toString(8);
 		}
 		return o;
@@ -80,8 +80,8 @@ export class RandomU8Array extends Uint8Array {
 	 * @returns A string representation of the underlying buffer in an arbitrary radix.
 	 */
 	toBaseN(radix: Radix): string {
-		let s = "", i = 0;
-		for (; i < this.length; i++) {
+		let s = "", i = this.length | 0;
+		while (i--) {
 			s += this[i].toString(radix);
 		}
 		return s;
@@ -89,14 +89,14 @@ export class RandomU8Array extends Uint8Array {
 }
 
 /**
- * The `RandomU16Array` class provides utilities for representing and
+ * The `U16Array` class provides utilities for representing and
  * encoding random 16-bit unsigned integer arrays in various string formats.
  *
  * @example
  * ```typescript
- * const r = RandomU16Array.ofLength(2);
+ * const r = U16Array.ofLength(2);
  * // or
- * // const r = new RandomU16Array(2);
+ * // const r = new U16Array(2);
  * console.log(r.toHex()); // "faf0faf0"
  * r.randomize();
  * console.log(r.toHex()); // "beefbeef"
@@ -104,16 +104,16 @@ export class RandomU8Array extends Uint8Array {
  *
  * @remarks String output does **not** include prefix (e.g., `0b`, `0o`, `0x`).
  */
-export class RandomU16Array extends Uint16Array {
+export class U16Array extends Uint16Array {
 	/**
-	 * Generates a new `RandomU16Array` instance seeded with
+	 * Generates a new `U16Array` instance seeded with
 	 * `Math.random`-sourced bytes.
 	 *
 	 * @param length - The number of random bytes to generate.
-	 * @returns A `RandomU16Array` instance initialized with the generated random bytes.
+	 * @returns A `U16Array` instance initialized with the generated random bytes.
 	 */
-	static ofLength(length: number): RandomU16Array {
-		return new RandomU16Array(length);
+	static ofLength(length: number): U16Array {
+		return new U16Array(length);
 	}
 
 	constructor(length: number) {
@@ -122,12 +122,12 @@ export class RandomU16Array extends Uint16Array {
 	}
 
 	/**
-	 * @remarks **Mutates the underlying buffer.**
-	 * @returns the same Uint8Array with each element randomized to a new random u8 value.
+	 * @remarks **Mutates** the underlying buffer.
+	 * @returns the same Uint16Array with each element randomized to a new random u16 value.
 	 */
 	randomize(): this {
-		const { length } = this;
-		for (let i = 0; i < length; i++) {
+		let i = this.length | 0;
+		while (i--) {
 			this[i] = u16();
 		}
 		return this;
@@ -138,8 +138,8 @@ export class RandomU16Array extends Uint16Array {
 	 * @remarks Does not include the `0b` prefix.
 	 */
 	toBinary(): string {
-		let b = "", i = 0;
-		for (; i < this.length; i++) {
+		let b = "", i = this.length | 0;
+		while (i--) {
 			b += this[i].toString(2);
 		}
 		return b;
@@ -150,8 +150,8 @@ export class RandomU16Array extends Uint16Array {
 	 * @remarks Does not include the `0o` prefix.
 	 */
 	toOctal(): string {
-		let o = "", i = 0;
-		for (; i < this.length; i++) {
+		let o = "", i = this.length | 0;
+		while (i--) {
 			o += this[i].toString(8);
 		}
 		return o;
@@ -162,8 +162,8 @@ export class RandomU16Array extends Uint16Array {
 	 * @remarks Does not include the `0x` prefix.
 	 */
 	toHex(): string {
-		let h = "", i = 0;
-		for (; i < this.length; i++) {
+		let h = "", i = this.length | 0;
+		while (i--) {
 			h += this[i].toString(16);
 		}
 		return h;
@@ -174,8 +174,8 @@ export class RandomU16Array extends Uint16Array {
 	 * @returns A string representation of the underlying buffer in an arbitrary radix.
 	 */
 	toBaseN(radix: Radix): string {
-		let s = "", i = 0;
-		for (; i < this.length; i++) {
+		let s = "", i = this.length | 0;
+		while (i--) {
 			s += this[i].toString(radix);
 		}
 		return s;
@@ -183,14 +183,14 @@ export class RandomU16Array extends Uint16Array {
 }
 
 /**
- * The `RandomU32Array` class provides utilities for representing and
+ * The `U32Array` class provides utilities for representing and
  * encoding random 4-byte arrays in various string formats.
  *
  * @example
  * ```typescript
- * const r = RandomU32Array.ofLength(2);
+ * const r = U32Array.ofLength(2);
  * // or
- * // const r = new RandomU32Array(2);
+ * // const r = new U32Array(2);
  * console.log(r.toHex()); // "faf0"
  * r.randomize();
  * console.log(r.toHex()); // "beef"
@@ -198,16 +198,16 @@ export class RandomU16Array extends Uint16Array {
  *
  * @remarks String output does **not** include prefix (e.g., `0b`, `0o`, `0x`).
  */
-export class RandomU32Array extends Uint32Array {
+export class U32Array extends Uint32Array {
 	/**
-	 * Generates a new `RandomU32Array` instance seeded with
+	 * Generates a new `U32Array` instance seeded with
 	 * `Math.random`-sourced bytes.
 	 *
 	 * @param length - The number of random bytes to generate.
-	 * @returns A `RandomU32Array` instance initialized with the generated random bytes.
+	 * @returns A `U32Array` instance initialized with the generated random bytes.
 	 */
-	static ofLength(length: number): RandomU32Array {
-		return new RandomU32Array(length);
+	static ofLength(length: number): U32Array {
+		return new U32Array(length);
 	}
 
 	constructor(length: number) {
@@ -216,8 +216,8 @@ export class RandomU32Array extends Uint32Array {
 	}
 
 	/**
-	 * @remarks **Mutates the underlying buffer.**
-	 * @returns the same Uint8Array with each element randomized to a new random u8 value.
+	 * @remarks **Mutates** the underlying buffer.
+	 * @returns the same Uint32Array with each element randomized to a new random u32 value.
 	 */
 	randomize(): this {
 		const { length } = this;
@@ -232,8 +232,8 @@ export class RandomU32Array extends Uint32Array {
 	 * @remarks Does not include the `0b` prefix.
 	 */
 	toBinary(): string {
-		let b = "", i = 0;
-		for (; i < this.length; i++) {
+		let b = "", i = this.length | 0;
+		while (i--) {
 			b += this[i].toString(2);
 		}
 		return b;
@@ -244,8 +244,8 @@ export class RandomU32Array extends Uint32Array {
 	 * @remarks Does not include the `0o` prefix.
 	 */
 	toOctal(): string {
-		let o = "", i = 0;
-		for (; i < this.length; i++) {
+		let o = "", i = this.length | 0;
+		while (i--) {
 			o += this[i].toString(8);
 		}
 		return o;
@@ -256,8 +256,8 @@ export class RandomU32Array extends Uint32Array {
 	 * @remarks Does not include the `0x` prefix.
 	 */
 	toHex(): string {
-		let h = "", i = 0;
-		for (; i < this.length; i++) {
+		let h = "", i = this.length | 0;
+		while (i--) {
 			h += this[i].toString(16);
 		}
 		return h;
@@ -268,8 +268,8 @@ export class RandomU32Array extends Uint32Array {
 	 * @returns A string representation of the underlying buffer in an arbitrary radix.
 	 */
 	toBaseN(radix: Radix): string {
-		let s = "", i = 0;
-		for (; i < this.length; i++) {
+		let s = "", i = this.length | 0;
+		while (i--) {
 			s += this[i].toString(radix);
 		}
 		return s;

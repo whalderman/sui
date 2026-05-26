@@ -1,23 +1,23 @@
 import type { Radix } from "../array.ts";
 
 /**
- * The `RandomU8Array` class provides utilities for representing
+ * The `U8Array` class provides utilities for representing
  * and encoding cryptographically secure random unsigned integer arrays in various
  * string formats.
  *
  * @example
  * ```typescript
- * const r = RandomU8Array.ofLength(2);
+ * const r = U8Array.ofLength(2);
  * // or
- * // const r = new RandomU8Array(2);
+ * // const r = new U8Array(2);
  * console.log(r.toHex()); // "ff10"
  * ```
  *
  * @remarks String output does **not** include prefix (e.g., `0b`, `0o`, `0x`).
  */
-export class RandomU8Array extends Uint8Array {
-	static ofLength(length: number): RandomU8Array {
-		return new RandomU8Array(length);
+export class U8Array extends Uint8Array {
+	static ofLength(length: number): U8Array {
+		return new U8Array(length);
 	}
 
 	constructor(length: number) {
@@ -27,7 +27,7 @@ export class RandomU8Array extends Uint8Array {
 
 	/**
 	 * @remarks **Mutates the underlying buffer.**
-	 * @returns the same RandomU8Array with each element randomized to a new random u8 value.
+	 * @returns the same U8Array with each element randomized to a new random u8 value.
 	 */
 	randomize(): this {
 		return crypto.getRandomValues(this);
@@ -70,23 +70,23 @@ export class RandomU8Array extends Uint8Array {
 	}
 }
 /**
- * The `RandomU16Array` class provides utilities for representing
+ * The `U16Array` class provides utilities for representing
  * and encoding cryptographically secure random 16-bit unsigned integer arrays in
  * various string formats.
  *
  * @example
  * ```typescript
- * const r = RandomU16Array.ofLength(2);
+ * const r = U16Array.ofLength(2);
  * // or
- * // const r = new RandomU16Array(2);
+ * // const r = new U16Array(2);
  * console.log(r.toHex()); // "ff10"
  * ```
  *
  * @remarks String output does **not** include prefix (e.g., `0b`, `0o`, `0x`).
  */
-export class RandomU16Array extends Uint16Array {
-	static ofLength(length: number): RandomU16Array {
-		return new RandomU16Array(length);
+export class U16Array extends Uint16Array {
+	static ofLength(length: number): U16Array {
+		return new U16Array(length);
 	}
 
 	constructor(length: number) {
@@ -96,7 +96,7 @@ export class RandomU16Array extends Uint16Array {
 
 	/**
 	 * @remarks **Mutates the underlying buffer.**
-	 * @returns the same RandomU16Array with each element randomized to a new random u16 value.
+	 * @returns the same U16Array with each element randomized to a new random u16 value.
 	 */
 	randomize(): this {
 		return crypto.getRandomValues(this);
@@ -151,24 +151,24 @@ export class RandomU16Array extends Uint16Array {
 	}
 }
 /**
- * The `RandomU32Array` class provides utilities for representing
+ * The `U32Array` class provides utilities for representing
  * and encoding cryptographically secure random 4-byte
  * arrays in various string formats.
  *
  * @example
  * ```typescript
- * const r = RandomU32Array.ofLength(2);
+ * const r = U32Array.ofLength(2);
  * // or
- * // const r = new RandomU32Array(2);
+ * // const r = new U32Array(2);
  * console.log(r.toHex()); // "ff10"
  * ```
  *
  * @remarks String output does **not** include prefix (e.g., `0b`, `0o`, `0x`).
  */
 
-export class RandomU32Array extends Uint32Array {
-	static ofLength(length: number): RandomU32Array {
-		return new RandomU32Array(length);
+export class U32Array extends Uint32Array {
+	static ofLength(length: number): U32Array {
+		return new U32Array(length);
 	}
 
 	constructor(length: number) {
@@ -178,7 +178,7 @@ export class RandomU32Array extends Uint32Array {
 
 	/**
 	 * @remarks **Mutates the underlying buffer.**
-	 * @returns the same RandomU32Array with each element randomized to a new random u32 value.
+	 * @returns the same U32Array with each element randomized to a new random u32 value.
 	 */
 	randomize(): this {
 		return crypto.getRandomValues(this);
