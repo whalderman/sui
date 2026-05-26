@@ -26,7 +26,7 @@ export class U8Array extends Uint8Array {
 	}
 
 	/**
-	 * @remarks **Mutates the underlying buffer.**
+	 * @remarks **Mutates** the underlying buffer.
 	 * @returns the same U8Array with each element randomized to a new random u8 value.
 	 */
 	randomize(): this {
@@ -38,8 +38,8 @@ export class U8Array extends Uint8Array {
 	 * @remarks Does not include the `0b` prefix.
 	 */
 	toBinary(): string {
-		let b = "", i = 0;
-		for (; i < this.length; i++) {
+		let b = "", i = this.length;
+		while (i--) {
 			b += this[i].toString(2);
 		}
 		return b;
@@ -50,8 +50,8 @@ export class U8Array extends Uint8Array {
 	 * @remarks Does not include the `0o` prefix.
 	 */
 	toOctal(): string {
-		let o = "", i = 0;
-		for (; i < this.length; i++) {
+		let o = "", i = this.length;
+		while (i--) {
 			o += this[i].toString(8);
 		}
 		return o;
@@ -62,8 +62,8 @@ export class U8Array extends Uint8Array {
 	 * @returns A string representation of the underlying buffer in an arbitrary radix.
 	 */
 	toBaseN(radix: Radix): string {
-		let s = "", i = 0;
-		for (; i < this.length; i++) {
+		let s = "", i = this.length;
+		while (i--) {
 			s += this[i].toString(radix);
 		}
 		return s;
@@ -95,7 +95,7 @@ export class U16Array extends Uint16Array {
 	}
 
 	/**
-	 * @remarks **Mutates the underlying buffer.**
+	 * @remarks **Mutates** the underlying buffer.
 	 * @returns the same U16Array with each element randomized to a new random u16 value.
 	 */
 	randomize(): this {
@@ -107,8 +107,8 @@ export class U16Array extends Uint16Array {
 	 * @remarks Does not include the `0b` prefix.
 	 */
 	toBinary(): string {
-		let b = "", i = 0;
-		for (; i < this.length; i++) {
+		let b = "", i = this.length;
+		while (i--) {
 			b += this[i].toString(2);
 		}
 		return b;
@@ -119,8 +119,8 @@ export class U16Array extends Uint16Array {
 	 * @remarks Does not include the `0o` prefix.
 	 */
 	toOctal(): string {
-		let o = "", i = 0;
-		for (; i < this.length; i++) {
+		let o = "", i = this.length;
+		while (i--) {
 			o += this[i].toString(8);
 		}
 		return o;
@@ -131,8 +131,8 @@ export class U16Array extends Uint16Array {
 	 * @remarks Does not include the `0x` prefix.
 	 */
 	toHex(): string {
-		let h = "", i = 0;
-		for (; i < this.length; i++) {
+		let h = "", i = this.length;
+		while (i--) {
 			h += this[i].toString(16);
 		}
 		return h;
@@ -143,8 +143,8 @@ export class U16Array extends Uint16Array {
 	 * @returns A string representation of the underlying buffer in an arbitrary radix.
 	 */
 	toBaseN(radix: Radix): string {
-		let s = "", i = 0;
-		for (; i < this.length; i++) {
+		let s = "", i = this.length;
+		while (i--) {
 			s += this[i].toString(radix);
 		}
 		return s;
@@ -177,7 +177,7 @@ export class U32Array extends Uint32Array {
 	}
 
 	/**
-	 * @remarks **Mutates the underlying buffer.**
+	 * @remarks **Mutates** the underlying buffer.
 	 * @returns the same U32Array with each element randomized to a new random u32 value.
 	 */
 	randomize(): this {
@@ -189,8 +189,8 @@ export class U32Array extends Uint32Array {
 	 * @remarks Does not include the `0b` prefix.
 	 */
 	toBinary(): string {
-		let b = "", i = 0;
-		for (; i < this.length; i++) {
+		let b = "", i = this.length;
+		while (i--) {
 			b += this[i].toString(2);
 		}
 		return b;
@@ -201,8 +201,8 @@ export class U32Array extends Uint32Array {
 	 * @remarks Does not include the `0o` prefix.
 	 */
 	toOctal(): string {
-		let o = "", i = 0;
-		for (; i < this.length; i++) {
+		let o = "", i = this.length;
+		while (i--) {
 			o += this[i].toString(8);
 		}
 		return o;
@@ -213,8 +213,8 @@ export class U32Array extends Uint32Array {
 	 * @remarks Does not include the `0x` prefix.
 	 */
 	toHex(): string {
-		let h = "", i = 0;
-		for (; i < this.length; i++) {
+		let h = "", i = this.length;
+		while (i--) {
 			h += this[i].toString(16);
 		}
 		return h;
@@ -225,8 +225,8 @@ export class U32Array extends Uint32Array {
 	 * @returns A string representation of the underlying buffer in an arbitrary radix.
 	 */
 	toBaseN(radix: Radix): string {
-		let s = "", i = 0;
-		for (; i < this.length; i++) {
+		let s = "", i = this.length;
+		while (i--) {
 			s += this[i].toString(radix);
 		}
 		return s;
