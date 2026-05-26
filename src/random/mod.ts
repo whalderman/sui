@@ -4,7 +4,7 @@
  * and byte arrays.
  */
 
-export * as array from "./array.ts";
+export * from "./array.ts";
 export * as integer from "./integer.ts";
 export * as secure from "./secure/mod.ts";
 

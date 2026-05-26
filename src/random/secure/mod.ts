@@ -1,1 +1,1 @@
-export * as array from "./array.ts";
+export * from "./array.ts";
