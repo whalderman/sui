@@ -76,18 +76,6 @@ export class RandomU8Array extends Uint8Array {
 	}
 
 	/**
-	 * @returns A hex-encoded string (e.g. `"faf0"`).
-	 * @remarks Does not include the `0x` prefix.
-	 */
-	toHex(): string {
-		let h = "", i = 0;
-		for (; i < this.length; i++) {
-			h += this[i].toString(16);
-		}
-		return h;
-	}
-
-	/**
 	 * @param radix The base radix to use. Must be between`2` and `36` inclusive.
 	 * @returns A string representation of the underlying buffer in an arbitrary radix.
 	 */
