@@ -14,11 +14,6 @@
  * @returns A random integer between `min` (inclusive) and `max` (exclusive).
  */
 export function between(min = 0, max = Number.MAX_SAFE_INTEGER): number {
-	if ((max - min) > Number.MAX_SAFE_INTEGER) {
-		console.warn(
-			`The range ${min}..${max} is greater than the maximum safe integer (${Number.MAX_SAFE_INTEGER}).`,
-		);
-	}
 	if (min === max) {
 		return min;
 	}
@@ -30,6 +25,8 @@ export function between(min = 0, max = Number.MAX_SAFE_INTEGER): number {
 	const randomNumWithinRange = min + randomNum;
 	return Math.trunc(randomNumWithinRange);
 }
+
+export { between as randomIntBetween };
 
 /**
  * @returns A pseudo-random unsigned 8-bit integer.
